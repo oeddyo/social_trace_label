@@ -1,0 +1,18 @@
+{
+    "first_name": "Cheng", 
+    "last_name": "Tao", 
+    "text": "A Strong Recommendation of an Often Overlooked Classic: Excalibur (1981)\n", 
+    "mutual": 6, 
+    "answer": "2", 
+    "session": {
+    "first_name": "Donnie", 
+    "last_name": "Carter", 
+    "text": "A Boeing 737 has crashed landed in the Russian city of Kazan, killing all 44 passengers on board.\n", 
+    "mutual": 4, 
+    "answer": "2", 
+    "session": "67dfd871-c515-465f-80f9-f70806cdde36", 
+    "user_name": "CarterDo", 
+    "avartar_url": "./static/2/male/old/6.jpeg", 
+    "geo": "Ithaca, NY", 
+    "condition": 2
+}

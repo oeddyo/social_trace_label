@@ -1,0 +1,31 @@
+<html>
+    <head> 
+        <link rel="stylesheet" href="/static/style.css" type="text/css">
+        <title>Twitter</title>
+    </head> 
+    <body>
+        <p>
+        <img src={{ user_dic.avartar_url }}>
+        </p>
+        <p>{{user_dic.user_name}} {{user_dic.first_name}} {{user_dic.last_name}}</p>
+        <p>{{user_dic.text}}</p>
+        <p>{{user_dic.geo}}</p>
+        <p>mutual friends: {{user_dic.mutual}}</p>
+
+        <form name="next" method="post" action="{{next}}">
+            <div><strong></strong>: How likely are you going to retweet this tweet?
+                <input type="radio" name="answer" value="1">1
+                <input type="radio" name="answer" value="2">2
+                <input type="radio" name="answer" value="3">3
+                <input type="radio" name="answer" value="4">4
+                <input type="radio" name="answer" value="5">5
+                <input type="radio" name="answer" value="6">6
+                <input type="radio" name="answer" value="7">7
+            </div>
+            <input type="submit" value="Continue" />
+        </form>
+    </body>
+
+</html>
+
+

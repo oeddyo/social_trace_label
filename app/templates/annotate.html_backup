@@ -1,0 +1,16 @@
+<html>
+    <head> 
+        <link rel="stylesheet" href="/static/style.css" type="text/css">
+        <title>Twitter</title>
+    </head> 
+    <body>
+        <p>
+        <img src={{ user_dic.avartar_url }}>
+        </p>
+        <p>{{user_dic.text}}</p>
+        <p>{{user_dic.geo}}</p>
+        <p>mutual friends: {{user_dic.mutual}}</p>
+    </body>
+
+</html>
+
