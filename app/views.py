@@ -18,10 +18,10 @@ def logout():
 @app.route('/annotate', methods = ['POST', 'GET'])
 def annotate():
     user_post = flask.users[flask.session['sessionid']].get_next()
-    user_dic = json.loads(user_post)
     if user_post == None:
         return flask.redirect(flask.url_for('logout'))
     
+    user_dic = json.loads(user_post)
     if request.method == "POST":
         answer = flask.request.form.get("answer")
         user_dic['answer'] = answer
