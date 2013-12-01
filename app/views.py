@@ -4,6 +4,8 @@ from annotator import Annotator
 import json
 import flask
 import os
+import pymongo
+
 
 @app.route('/welcome')
 def welcome():
@@ -24,11 +26,15 @@ def annotate():
         answer = flask.request.form.get("answer")
         user_dic['answer'] = answer
         user_dic['session'] = str(flask.session['sessionid'])
-         
-        db_path = os.path.join( os.path.dirname(os.path.realpath(__file__)), 'db/data.json' )
-        print 'db ', db_path
-        with open(db_path, "a") as outfile:
-            json.dump(user_dic, outfile, indent=4)
+        
+        conn = pymongo.MongoClient(host='grande.rutgers.edu')
+        cursor = conn['social_trace']['annotation']
+        cursor.insert({'annotation':user_dic})
+        
+        #db_path = os.path.join( os.path.dirname(os.path.realpath(__file__)), 'db/data.json' )
+        #print 'db ', db_path
+        #with open(db_path, "a") as outfile:
+        #    json.dump(user_dic, outfile, indent=4)
 
         print user_dic
     return render_template('annotate.html',next='/annotate', user_dic = user_dic)

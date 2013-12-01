@@ -3,6 +3,7 @@ import os
 import random
 import json
 
+
 class Annotator:
     def __init__(self):
 
@@ -88,6 +89,7 @@ class Annotator:
                 'mutual':mutual,
                 'text': tweet_text
                 }
+        
         return json.dumps(json_obj) 
         #return self.condition, user_name, first_name, last_name, avartar_url, geo, mutual
 
