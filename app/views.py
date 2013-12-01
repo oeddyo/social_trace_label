@@ -31,7 +31,7 @@ def annotate():
             json.dump(user_dic, outfile, indent=4)
 
         print user_dic
-    return render_template('annotate.html', user_dic = user_dic)
+    return render_template('annotate.html',next='/annotate', user_dic = user_dic)
 
 @app.route('/login', methods = ['POST', 'GET'])
 def login():

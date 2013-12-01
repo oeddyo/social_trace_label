@@ -4,15 +4,27 @@
         <title>Twitter</title>
     </head> 
     <body>
-        <p>
-        <.tweet_image>>
-            <img src={{ user_dic.avartar_url }}>
-        </.tweet_image>
-        </p>
-        <p>{{user_dic.user_name}} {{user_dic.first_name}} {{user_dic.last_name}}</p>
-        <p>{{user_dic.text}}</p>
-        <p>{{user_dic.geo}}</p>
-        <p>mutual friends: {{user_dic.mutual}}</p>
+        <div class="tweet">
+            <div class="tweet_id hidden">12345</div>
+            <div class="tweet_image">
+                <a href="{{user_dic.avartar_url}}" 
+                    title="[user_mention_title]">
+                    <img src="{{user_dic.avartar_url}}" width="48" height="48"></a>      
+            </div>
+            <div class="tweet">
+                <div class="tweet_screen_name">
+                    <a href="http://twitter.com/[screen_name]" 
+                        title="[user_mention_title]">{{user_dic.user_name}}</a>
+                    <span class="tweet_name">{{user_dic.first_name}} {{user_dic.last_name}}</span>
+                </div>
+                <div class="tweet_text">{{user_dic.text}}
+                    <div class="tweet_date">
+                        <a href="http://twitter.com/[screen_name]/status/[tweet_id]" 
+                            title="[tweet_display_title]">32 minutes ago</a>
+                    </div>
+                </div>
+            </div>
+        </div><hr>
 
         <form name="next" method="post" action="{{next}}">
             <div><strong></strong>: How likely are you going to retweet this tweet?

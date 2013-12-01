@@ -15,4 +15,114 @@
     "avartar_url": "./static/2/male/old/6.jpeg", 
     "geo": "Ithaca, NY", 
     "condition": 2
+}{
+    "first_name": "Evangelino", 
+    "last_name": "Parra", 
+    "text": "I am an Amazon employee who's about to be working 60 hour weeks for peak holiday season\n", 
+    "mutual": 5, 
+    "answer": "2", 
+    "session": "9c8df678-d12c-4afd-ae70-792786937731", 
+    "user_name": "parramanhook", 
+    "avartar_url": "./static/3/male/young/3.jpeg", 
+    "geo": "Ithaca, NY", 
+    "condition": 2
+}{
+    "first_name": "Charles", 
+    "last_name": "Reid", 
+    "text": "A grapples with huge increase in records requests\n", 
+    "mutual": 9, 
+    "answer": "5", 
+    "session": "9c8df678-d12c-4afd-ae70-792786937731", 
+    "user_name": "ChazR85", 
+    "avartar_url": "./static/1/male/young/10.jpeg", 
+    "geo": "Ithaca, NY", 
+    "condition": 3
+}{
+    "first_name": "Terry", 
+    "last_name": "Chou", 
+    "text": "A grapples with huge increase in records requests\n", 
+    "mutual": 6, 
+    "answer": "2", 
+    "session": "c156b71b-a112-4726-90e2-e22fbfb7d0d8", 
+    "user_name": "TerryC", 
+    "avartar_url": "./static/4/male/old/13.jpeg", 
+    "geo": "New York, NY", 
+    "condition": 2
+}{
+    "first_name": "Nicholas", 
+    "last_name": "Riley", 
+    "text": "A grapples with huge increase in records requests\n", 
+    "mutual": 9, 
+    "answer": "2", 
+    "session": "c156b71b-a112-4726-90e2-e22fbfb7d0d8", 
+    "user_name": "batonhenge", 
+    "avartar_url": "./static/1/male/young/13.jpeg", 
+    "geo": "Ithaca, NY", 
+    "condition": 3
+}{
+    "first_name": "Danny", 
+    "last_name": "Quintana", 
+    "text": "I am an Amazon employee who's about to be working 60 hour weeks for peak holiday season\n", 
+    "mutual": 4, 
+    "answer": "3", 
+    "session": "f2750c89-cc64-4c3d-b70a-15ac622801f3", 
+    "user_name": "solidblockDanny", 
+    "avartar_url": "./static/2/male/young/7.jpeg", 
+    "geo": "Boston, MA", 
+    "condition": 2
+}{
+    "first_name": "Gary", 
+    "last_name": "Edgington", 
+    "text": "I am an Amazon employee who's about to be working 60 hour weeks for peak holiday season\n", 
+    "mutual": 12, 
+    "answer": "2", 
+    "session": "f2750c89-cc64-4c3d-b70a-15ac622801f3", 
+    "user_name": "trumpetGary", 
+    "avartar_url": "./static/2/male/old/3.jpeg", 
+    "geo": "Ithaca, NY", 
+    "condition": 3
+}{
+    "first_name": "Evangelino", 
+    "last_name": "Parra", 
+    "text": "A Strong Recommendation of an Often Overlooked Classic: Excalibur (1981)\n", 
+    "mutual": 4, 
+    "answer": "1", 
+    "session": "87cdc812-cfce-4cd3-800a-a2834f5aa410", 
+    "user_name": "parramanhook", 
+    "avartar_url": "./static/3/male/young/3.jpeg", 
+    "geo": "Boston, MA", 
+    "condition": 2
+}{
+    "first_name": "Ke", 
+    "last_name": "Park", 
+    "text": "A Strong Recommendation of an Often Overlooked Classic: Excalibur (1981)\n", 
+    "mutual": 9, 
+    "answer": "3", 
+    "session": "87cdc812-cfce-4cd3-800a-a2834f5aa410", 
+    "user_name": "MrPark_Ke", 
+    "avartar_url": "./static/4/male/old/15.jpeg", 
+    "geo": "Ithaca, NY", 
+    "condition": 3
+}{
+    "first_name": "David", 
+    "last_name": "Bruce", 
+    "text": "A grapples with huge increase in records requests\n", 
+    "mutual": 0, 
+    "answer": "3", 
+    "session": "87cdc812-cfce-4cd3-800a-a2834f5aa410", 
+    "user_name": "Dbcyborg", 
+    "avartar_url": "./static/2/male/old/2.jpeg", 
+    "geo": "Austin, TX", 
+    "condition": 4
+}{
+    "first_name": "Trevor", 
+    "last_name": "Meecham", 
+    "text": "I am an Amazon employee who's about to be working 60 hour weeks for peak holiday season\n", 
+    "mutual": 5, 
+    "answer": "3", 
+    "session": "5ff4c31b-e6c2-45eb-a4e5-3ed33963f8ba", 
+    "user_name": "walking_tm", 
+    "avartar_url": "./static/2/male/young/9.jpeg", 
+    "geo": "New York, NY", 
+    "condition": 2
 }
