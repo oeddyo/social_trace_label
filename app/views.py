@@ -39,6 +39,7 @@ def annotate():
         print user_dic
     return render_template('annotate.html',next='/annotate', user_dic = user_dic)
 
+
 @app.route('/login', methods = ['POST', 'GET'])
 def login():
     if not flask.request.args.get('sessionid'):
@@ -49,5 +50,13 @@ def login():
 
         if request.method == 'POST':
             annotator_age = flask.request.form.get('age')
-            print 'age = ', annotator_age
+            print flask.request.form.keys()
+            
+            conn = pymongo.MongoClient(host='grande.rutgers.edu')
+            cursor = conn['social_trace']['annotation']
+            
+            for key in flask.request.form.keys():
+                cursor.insert({"subject": flask.request.form.get(key)} )
+            
         return flask.redirect(flask.url_for('annotate'))
+

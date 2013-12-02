@@ -26,6 +26,20 @@ class Annotator:
         self.mutual = []
         self.geo = []
         idx = 0
+
+        condition_index = []
+        for gender in range(2):
+            for geo in range(2):
+                for n_mutual in range(3):
+                    condition_index.append( (gender, geo, n_mutual))
+        random.shuffle(condition_index)
+        for idx in condition_index:
+            gender, geo, n_mutual = idx
+            self.gender.append(gender)
+            self.mutual.append(n_mutual)
+            self.geo.append(geo)
+        """
+
         # could also shuffle here
         for gender in range(2):
             for geo in range(2):
@@ -34,6 +48,7 @@ class Annotator:
                     self.mutual.append(n_mutual)
                     self.geo.append(geo)
                     idx += 1 
+        """
         self.n_condition = 12
     
     def get_geo(self, near_or_far):

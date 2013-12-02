@@ -2,51 +2,101 @@
     <head>  
         <link href="/static/style.css" rel="stylesheet" type="text/css" /> 
         <title="Welcome">
-        </head>
+            <script>
+                function required(inputtx){
+                    console.log("LENGTH = "+inputtx.value.length)
+                    if (inputtx.value == null or inputtx.value.length == 0){
+                        alert("Please fill all fields");
+                        return false;
+                    }
+                    return true;
+                }
+            </script>
+
+     </head>
         <body>
             <div id="wrapper">
                 <div id="smallblank"></div>
                 <h1>Welcome</h1>
                 {{ blob }}
 
-                <p> We are conducting a study about brand perception that is reflected in
-                discussion on Twitter. This study focuses in particular on a telecommunications
-                company, Orange, which is a branch of France Telecom.</p>
+                <p> We are conducting a research on how people retweet on Twitter. Thank you for participating. We will need some basic information about you, but we will never store it or distribute it in any form.   </p>
 
-                <p> You will be presented with a series of tweets, each followed by
-                several questions that aim to assess the relevance of the tweet and how it
-                reflects the Twitter user's sentiment. </p>
+                <p> About us: We are Eddie Xie, Jin Liu, Jean Marcel Dos Reis Costa. All of us are PhD students at Cornell University. Please feel free to contact us 
+                </p>
 
-                <p> <b>About us:</b> We are a research group at USC's <a href="http://annenberglab.org" target=_blank>AIL</a> and <a href="http://sail.usc.edu/" target=_blank>SAIL</a> labs, comprised of
-                social scientists and engineers.  We proudly support open data and research, including open source software
-                and public dissemination of our results. </p>
+                <p> <i><b>
+                        Note to participants:</b>
+                </i>
+                </p>
 
-                <p> <i><b>Note to Mechanical Turkers:</b> We verify the quality of the results using
-                    randomly presented indicator stimuli.  However, we select Turkers with
-                    high past acceptance, so in practice we reject very few HITs.</i></p>
+                <p>
+                1) We will show 12 tweets for you in a row after filling the following form. 
+                </p>
+                <p>
+                2) For each tweet, we ask how likely are you going to retweet it. What you need to do is to scan the tweet, and click the corresponding answer, and click Continue 
+                </>
+                <p>
+                3) PLEASE FINISH THE WHOLE TEST BEFORE CLOSE YOUR BROWSWER
+                </p>
+                Please fill the following forms:
+                <form name="start"  method="post" action="{{next}}" >
+                    <p>
+                    <input type="text"   name="real_name" id="real_name" >  If you're Cornell student, please fill this for credit. Otherwise optional
+                    </p>
+                    <p>
+                    <input type="text"   name="twitter_username" id="twitter_username">  Your Twitter user name?
+                    </p>
+                    <p>
+                    <input type="text"   name="language" id="language" > What's your mother tongue?
+                    </p>
+                    <p>
+                    What's your gender?
+                    <input type="radio" name="gender" value="Male" /> Male
+                    <input type="radio" name="gender" value="Female" /> Female
+                    </p>
+                    <p>
+                    What's your gender?
+                    <input type="radio" name="education" value="Freshman" /> Freshman
+                    <input type="radio" name="education" value="Sophomore" /> Sophomore
+                    <input type="radio" name="education" value="Junior" /> Junior
+                    <input type="radio" name="education" value="Senior" /> Senior
+                    <input type="radio" name="education" value="Graduate student" /> Graduate student
+                    <input type="radio" name="education" value="Other" /> Other
+                    </p>
 
-                <!--     <form name="start"  method="get" action="{{next}}"> -->
-                    <form name="start"  method="post" action="{{next}}">
+                    <p>
+                    How long have you registed Twitter?
+                    <input type="radio" name="use_since" value="I don’t use Twitter" /> I don’t use Twitter
+                    <input type="radio" name="use_since" value="Less than 6 months" /> Less than 6 months
+                    <input type="radio" name="use_since" value="7-11 months" /> 7-11 months
+                    <input type="radio" name="use_since" value="1-2 years" /> 1-2 years
+                    <input type="radio" name="use_since" value="3-5 years" /> 3-5 years
+                    </p>
 
+                    <p>
+                    How many times do you retweet in a week?
+                    <input type="radio" name="n_retweet" value="I don’t use Twitter" /> I don’t use Twitter
+                    <input type="radio" name="n_retweet" value="0 to 5" /> 0 to 5 times
+                    <input type="radio" name="n_retweet" value="6 to 10" /> 6 to 10 times
+                    <input type="radio" name="n_retweet" value="11 to 20" /> 11 to 20 times
+                    <input type="radio" name="n_retweet" value="More than 20" /> More than 20 times
+                    </p>
 
-                        <input type="text"   name="age" id="age">
-                        <label for="age">Age</label>
-                        <br/>
-                        <input type="text"   name="gender" id="gender">
-                        <label for="gender">Gender</label>
-                        <br/>
-                        <input type="text"   name="nativeLanguage" id="nativeLanguage">
-                        <label for="nativeLanguage">Native Language</label>
-                        <br/>
-                        <input type="text"   name="countryOfResidence" id="countryOfResidence">
-                        <label for="countryOfResidence">Country of Residence</label>
-                        <input type="hidden" name="cmd" value="login">
-                        <br/>
-                        <div id="smallblank"></div>
-                        <input type="submit" value="Start" />
-                    </form>
+                    <p>
+                    How often do you check other people’s tweets?
+                    <input type="radio" name="check_freq" value="I don’t use Twitter" /> I don’t use Twitter
+                    <input type="radio" name="check_freq" value="Less than once a month" /> Less than once a month
+                    <input type="radio" name="check_freq" value="At least once a month" /> At least once a month
+                    <input type="radio" name="check_freq" value="At least once a week" /> At least once a week
+                    <input type="radio" name="check_freq" value="At least once a day" /> At least once a day
+                    <input type="radio" name="check_freq" value="Several times a day" /> Several times a day
+                    </p>
 
+                    <input type="submit" value="Start" />
 
-                </div>
-            </body>
-        </html>
+                </form>
+
+            </div>
+        </body>
+    </html>
