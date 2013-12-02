@@ -53,10 +53,10 @@ def login():
             print flask.request.form.keys()
             
             conn = pymongo.MongoClient(host='grande.rutgers.edu')
-            cursor = conn['social_trace']['annotation']
+            cursor = conn['social_trace']['subject']
             
             for key in flask.request.form.keys():
-                cursor.insert({"subject": flask.request.form.get(key)} )
+                cursor.insert({"subject": str(flask.session['sessionid']), key: flask.request.form.get(key)} )
             
         return flask.redirect(flask.url_for('annotate'))
 
