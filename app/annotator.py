@@ -78,19 +78,32 @@ class Annotator:
         urls = []
         n_male = None
         n_female = None
-        if gender == 0:
-            n_male = random.randint(n/2 + 1, max(n/2+1, n) )
-            n_female = n - n_male
-        elif gender == 1:
-            n_female = random.randint(n/2 + 1, max(n/2 + 1, n) )
-            n_male = n - n_female
+
+        if n<=3:
+            if gender == 0:
+                n_male = n
+                n_female = 0
+            else:
+                n_female = n
+                n_male = 0
+        else:
+            if gender == 0:
+                n_male = random.randint(n/2 + 2, max(n/2+1, n) )
+                n_female = n - n_male
+            elif gender == 1:
+                n_female = random.randint(n/2 + 2, max(n/2 + 1, n) )
+                n_male = n - n_female
 
         print 'retweeters male = ', n_male, 'female = ', n_female
         for i in range(n_male):
             link = './static/'+self.get_post_user(0)[3]
+            if link in urls: # heruistic avoid duplicate
+                link = './static/'+self.get_post_user(0)[3]
             urls.append(link)
         for i in range(n_female):
             link = './static/'+self.get_post_user(1)[3]
+            if link in urls: # heruistic avoid duplicate
+                link = './static/'+self.get_post_user(1)[3]
             urls.append(link)
         random.shuffle(urls)
         return n_male, n_female, urls
