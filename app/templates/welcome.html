@@ -3,17 +3,37 @@
         <link href="/static/style.css" rel="stylesheet" type="text/css" /> 
         <title="Welcome">
             <script>
-                function required(inputtx){
-                    console.log("LENGTH = "+inputtx.value.length)
-                    if (inputtx.value == null or inputtx.value.length == 0){
-                        alert("Please fill all fields");
+                function validateForm()
+                {
+                    var twitter_username=document.forms["start"]["twitter_username"].value;
+                    var gender = document.forms['start']['gender'].value
+                    var education = document.forms['start']['education'].value
+                    var use_since = document.forms['start']['use_since'].value
+                    
+                    //console.log("gender = "+gender)
+
+                    if (twitter_username==null || twitter_username=="")
+                    {
+                        alert("Twitter handle must be filled out");
                         return false;
                     }
-                    return true;
+                    if (gender == null )
+                    {
+                        alert("Gender must be filled out");
+                        return false;
+                    }
+
+                    if (education == null || education =="")
+                    {
+                        alert("year in college must be filled out");
+                        return false;
+                    }
+
                 }
+
             </script>
 
-     </head>
+        </head>
         <body>
             <div id="wrapper">
                 <div id="smallblank"></div>
@@ -31,7 +51,7 @@
                 </p>
 
                 <p>
-                1) We will show 12 tweets for you in a row after filling the following form. 
+                1) We will show 12 tweets for you in a row after filling the following form. Please answer all the questions in the forms. 
                 </p>
                 <p>
                 2) For each tweet, we ask how likely are you going to retweet it. What you need to do is to scan the tweet, and click the corresponding answer, and click Continue 
@@ -45,7 +65,7 @@
                     <input type="text"   name="real_name" id="real_name" >  If you're Cornell student, please fill this for credit. Otherwise optional
                     </p>
                     <p>
-                    <input type="text"   name="twitter_username" id="twitter_username">  Your Twitter user name?
+                    <input type="text"   name="twitter_username" id="twitter_username">  Your Twitter handle (the name when people @mention you)?
                     </p>
                     <p>
                     <input type="text"   name="language" id="language" > What's your mother tongue?
@@ -56,7 +76,7 @@
                     <input type="radio" name="gender" value="Female" /> Female
                     </p>
                     <p>
-                    What's your gender?
+                    Which year you're in college?
                     <input type="radio" name="education" value="Freshman" /> Freshman
                     <input type="radio" name="education" value="Sophomore" /> Sophomore
                     <input type="radio" name="education" value="Junior" /> Junior
@@ -66,7 +86,7 @@
                     </p>
 
                     <p>
-                    How long have you registed Twitter?
+                    How long have you registered Twitter?
                     <input type="radio" name="use_since" value="I don’t use Twitter" /> I don’t use Twitter
                     <input type="radio" name="use_since" value="Less than 6 months" /> Less than 6 months
                     <input type="radio" name="use_since" value="7-11 months" /> 7-11 months
