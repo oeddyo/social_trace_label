@@ -4,7 +4,6 @@
         <!--[if gt IE 9]><!--><html lang="en"><!--<![endif]-->
             <head>
 
-
                 <meta charset="utf-8">
                 <title>Twitter / {{user_dic.user_name}}: {{user_dic.text}}</title>
 
@@ -1007,8 +1006,6 @@
                                                                 <img class="avatar js-action-profile-avatar" src="{{user_dic.avartar_url}}" alt="">
                                                                 <strong class="fullname js-action-profile-name show-popup-with-id">{{user_dic.first_name}} {{user_dic.last_name}}</strong>
                                                                 <span>&rlm;</span><span class="username js-action-profile-name"><s>@</s><b>{{user_dic.user_name}}</b></span>
-
-
                                                             </a>
 
 
@@ -1061,17 +1058,30 @@
                                                                 <br/>
 
 
-                                                                <a class="tweet-geo-text" href="//maps.google.com/maps?z=13&amp;ll=44.23886%2C-73.99725&amp;q=North%20Elba%2C%20NY" target="_blank">{{user_dic.mutual}} of your friends retweeted this</a>
+                                                                <a class="tweet-geo-text" href="//maps.google.com/maps?z=13&amp;ll=44.23886%2C-73.99725&amp;q=North%20Elba%2C%20NY" target="_blank">{{user_dic.mutual}} of your friends on Twitter retweeted this</a>
+
 
                                                             </span>
                                                         </div>
                                                     </div>
 
-                                                                <br>
-                                                                </br>
-                                                                <br>
-                                                                </br>
-                                                                
+
+                                                    <!-- to show the avartars of the retweeters -->
+                                                    {% for item in user_dic.retweeters %}
+                                                    
+                                                    <a class="js-profile-popup-actionable js-user-tipsy js-tooltip" href="/seanmhair" data-user-id="14819714" original-title="seanmhair" data-original-title="seanmhair">
+                                                        <img class="avatar size24 js-user-profile-link" src="{{item}}" alt="seanmhair">
+                                                    </a>
+
+                                                    {% endfor %}
+                                                    <br>
+                                                    </br>
+                                                    <br>
+                                                    </br>
+
+
+
+
 
                                                         <form name="next" method="post" action="{{next}}">
                                                             <h3>How likely are you to retweet this tweet?</h3>
@@ -1084,6 +1094,13 @@
                                                             </ul>
                                                             <input type="submit" value="Continue" style="margin-top: 15px;cursor:pointer;" />
                                                         </form>
+
+
+
+
+
+
+
 
                                                     <div class="proxy-tweet-container">
 

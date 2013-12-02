@@ -39,7 +39,6 @@ class Annotator:
             self.mutual.append(n_mutual)
             self.geo.append(geo)
         """
-
         # could also shuffle here
         for gender in range(2):
             for geo in range(2):
@@ -74,14 +73,33 @@ class Annotator:
             # female
             rd = random.randint(0, len(self.females)-1)
             return self.females[rd]
+    
+    def get_random_retweeter_avartars(self, n, gender ):
+        urls = []
+        n_male = None
+        n_female = None
+        if gender == 0:
+            n_male = random.randint(n/2 + 1, max(n/2+1, n) )
+            n_female = n - n_male
+        elif gender == 1:
+            n_female = random.randint(n/2 + 1, max(n/2 + 1, n) )
+            n_male = n - n_female
+
+        print 'retweeters male = ', n_male, 'female = ', n_female
+        for i in range(n_male):
+            link = './static/'+self.get_post_user(0)[3]
+            urls.append(link)
+        for i in range(n_female):
+            link = './static/'+self.get_post_user(1)[3]
+            urls.append(link)
+        random.shuffle(urls)
+        return n_male, n_female, urls
 
     def get_next(self, ):
         # logic controling conditions here
-        
         if self.condition >= self.n_condition:
             return None
-
-        mutual = [0 + random.randint(0, 2) , 5 + random.randint(-1, 1), 10 + random.randint(-2, 2)]
+        mutual = [0 + random.randint(0, 2) , 5 + random.randint(-1, 1), 10 + random.randint(-1, 1)]
         mutual = [max(0, i) for i in mutual ]
         gender = self.get_post_user(self.gender[self.condition])
         user_name = gender[0]
@@ -93,8 +111,11 @@ class Annotator:
         tweet_text = self.tweets[self.condition]
         mutual = mutual[self.mutual[self.condition]] 
         geo = self.get_geo(self.geo[self.condition])
-        self.condition += 1 
-        
+        gender_of_retweeters = self.gender[self.condition]
+        print 'gender this time = ', gender_of_retweeters 
+
+        n_male_retweeter, n_female_retweeter, retweeters_avartars = self.get_random_retweeter_avartars(mutual, gender_of_retweeters) 
+
         json_obj = {'condition':self.condition, 
                 'user_name':user_name, 
                 'first_name':first_name, 
@@ -102,10 +123,15 @@ class Annotator:
                 'avartar_url':avartar_url, 
                 'geo':geo,
                 'mutual':mutual,
-                'text': tweet_text
+                'text': tweet_text,
+                'retweeters': retweeters_avartars[:mutual],
+                'n_male_retweeter':n_male_retweeter,
+                'n_female_retwetter':n_female_retweeter
                 }
         
+        self.condition += 1 
         return json.dumps(json_obj) 
+        
         #return self.condition, user_name, first_name, last_name, avartar_url, geo, mutual
 
 def test():

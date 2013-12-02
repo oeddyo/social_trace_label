@@ -11,7 +11,6 @@ Ccbaseball,Chuck,Chao,4/male/young/11.jpeg,19
 cy_slippery,Casey,Yang,4/male/young/5.jpeg,19
 melaniVwoods,Melani,Velazquez,3/female/young/7.jpg,19
 wesleymisty,Wesley,Ho,4/male/young/4.jpeg,19
-NFloresPuff,Nirma,Flores,3/female/old/6.jpg,20
 anayaJ94,Julio,Anaya,3/male/young/6.jpeg,20
 kindlee,Lee,Pai,4/male/young/15.jpeg,20
 HiLeeds,Scarlett,Lawson,1/female/young/2.jpg,20
@@ -57,7 +56,6 @@ fabeljumper,Donna,McClain,2/female/young/10.jpg,27
 ZoeJalopy,Zoe,Rivera,2/female/young/8.jpg,27
 GGDossier,Gustav,Glenn,2/male/young/3.jpeg,27
 BeckieCloned,Rebecca,Holmes,1/female/young/15.jpg,27
-Wareat,Courtney,Ford,1/female/young/6.jpg,27
 rosesGW,Glenda,Winn,2/female/young/11.jpg,27
 JLBeepingCute,Jamie,Lind,2/female/young/3.jpg,27
 mao_shu_fang,Shu Fang,Mao,4/female/old/11.jpg,27
