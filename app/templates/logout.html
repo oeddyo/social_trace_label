@@ -1,0 +1,195 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        Please finish <b>ALL</b> these questions. 
+        <form name="start"  method="post" action="{{next}}" >
+            <p>
+            If you're Cornell student, please fill this for credit. Otherwise optional
+            <br>
+            <input type="text"   name="netid" id="netid" >
+            </p>
+
+            <p>
+            Your name?
+            <br>
+            <input type="text"   name="real_name" id="real_name" >
+            </p>
+
+
+            <p>
+            Your Twitter handle (the name when people @mention you)?
+            <br>
+            <input type="text"   name="twitter_username" id="twitter_username">  
+            </p>
+
+            <p>
+            What's your mother tongue?
+            <br>
+            <input type="text"   name="language" id="language" > 
+            </p>
+            <p>
+            What's your gender?
+            <br>
+            <br>
+            <input type="radio" name="gender" value="Male" /> Male
+            <input type="radio" name="gender" value="Female" /> Female
+            </p>
+            <p>
+            Which year you're in college?
+            <br>
+            <br>
+            <input type="radio" name="education" value="Freshman" /> Freshman
+            <input type="radio" name="education" value="Sophomore" /> Sophomore
+            <input type="radio" name="education" value="Junior" /> Junior
+            <input type="radio" name="education" value="Senior" /> Senior
+            <input type="radio" name="education" value="Graduate student" /> Graduate student
+            <input type="radio" name="education" value="Other" /> Other
+            </p>
+
+            <p>
+            How long have you registered Twitter?
+            <br>
+            <input type="radio" name="use_since" value="I dont use Twitter" /> I dont use Twitter
+            <input type="radio" name="use_since" value="Less than 6 months" /> Less than 6 months
+            <input type="radio" name="use_since" value="7-11 months" /> 7-11 months
+            <input type="radio" name="use_since" value="1-2 years" /> 1-2 years
+            <input type="radio" name="use_since" value="3-5 years" /> 3-5 years
+            </p>
+
+            <p>
+            How many times do you retweet in a week?
+            <br>
+            <input type="radio" name="n_retweet" value="I dont use Twitter" /> I dont use Twitter
+            <input type="radio" name="n_retweet" value="0 to 5" /> 0 to 5 times
+            <input type="radio" name="n_retweet" value="6 to 10" /> 6 to 10 times
+            <input type="radio" name="n_retweet" value="11 to 20" /> 11 to 20 times
+            <input type="radio" name="n_retweet" value="More than 20" /> More than 20 times
+            </p>
+
+            <p>
+            How often do you check other people's tweets?
+            <br>
+            <input type="radio" name="check_freq" value="I don’t use Twitter" /> I dont use Twitter
+            <input type="radio" name="check_freq" value="Less than once a month" /> Less than once a month
+            <input type="radio" name="check_freq" value="At least once a month" /> At least once a month
+            <input type="radio" name="check_freq" value="At least once a week" /> At least once a week
+            <input type="radio" name="check_freq" value="At least once a day" /> At least once a day
+            <input type="radio" name="check_freq" value="Several times a day" /> Several times a day
+            </p>
+
+            <br>
+            <b>How much do the following features influence your intention to retweet? </b>
+            <br>
+
+            <p>
+            <b>Gender of users on the page?</b>
+            <br>
+            <input type="radio" name="note_gender" value="1" /> Very weakly 
+            <input type="radio" name="note_gender" value="2" /> Weakly
+            <input type="radio" name="note_gender" value="3" /> Neutral
+            <input type="radio" name="note_gender" value="4" /> Somehow strongly
+            <input type="radio" name="note_gender" value="5" /> Very Strongly
+            </p>
+
+
+            <p>
+            <b>Location of where the tweet was from?</b>
+            <br>
+            <input type="radio" name="note_location" value="1" /> Very weakly 
+            <input type="radio" name="note_location" value="2" /> Weakly
+            <input type="radio" name="note_location" value="3" /> Neutral
+            <input type="radio" name="note_location" value="4" /> Somehow strongly
+            <input type="radio" name="note_location" value="5" /> Very Strongly
+            </p>
+
+
+            <p>
+            <b>Number of people who you follow also retweet the message?</b>
+            <br>
+            <input type="radio" name="note_n_followee_who_retweet" value="1" /> Very weakly 
+            <input type="radio" name="note_n_followee_who_retweet" value="2" /> Weakly
+            <input type="radio" name="note_n_followee_who_retweet" value="3" /> Neutral
+            <input type="radio" name="note_n_followee_who_retweet" value="4" /> Somehow strongly
+            <input type="radio" name="note_n_followee_who_retweet" value="5" /> Very Strongly
+            </p>
+
+
+
+            <p>
+            <b>Content of the tweet?</b>
+            <br>
+            <input type="radio" name="note_content" value="1" /> Very weakly 
+            <input type="radio" name="note_content" value="2" /> Weakly
+            <input type="radio" name="note_content" value="3" /> Neutral
+            <input type="radio" name="note_content" value="4" /> Somehow strongly
+            <input type="radio" name="note_content" value="5" /> Very Strongly
+            </p>
+
+
+            <p>
+            <b>Username of the user?</b>
+            <br>
+            <input type="radio" name="note_username" value="1" /> Very weakly 
+            <input type="radio" name="note_username" value="2" /> Weakly
+            <input type="radio" name="note_username" value="3" /> Neutral
+            <input type="radio" name="note_username" value="4" /> Somehow strongly
+            <input type="radio" name="note_username" value="5" /> Very Strongly
+            </p>
+
+
+            <p>
+            <b>Profile picture of the user who tweet the message?</b>
+            <br>
+            <input type="radio" name="note_profile_picture" value="1" /> Very weakly 
+            <input type="radio" name="note_profile_picture" value="2" /> Weakly
+            <input type="radio" name="note_profile_picture" value="3" /> Neutral
+            <input type="radio" name="note_profile_picture" value="4" /> Somehow strongly
+            <input type="radio" name="note_profile_picture" value="5" /> Very Strongly
+            </p>
+
+
+            <p>
+            <b>Age of the user who tweet?</b>
+            <br>
+            <input type="radio" name="note_user_age" value="1" /> Very weakly 
+            <input type="radio" name="note_user_age" value="2" /> Weakly
+            <input type="radio" name="note_user_age" value="3" /> Neutral
+            <input type="radio" name="note_user_age" value="4" /> Somehow strongly
+            <input type="radio" name="note_user_age" value="5" /> Very Strongly
+            </p>
+
+
+            <p>
+            <b>Date of the tweet?</b>
+            <br>
+            <input type="radio" name="note_date" value="1" /> Very weakly 
+            <input type="radio" name="note_date" value="2" /> Weakly
+            <input type="radio" name="note_date" value="3" /> Neutral
+            <input type="radio" name="note_date" value="4" /> Somehow strongly
+            <input type="radio" name="note_date" value="5" /> Very Strongly
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+            <input type="submit" value="Submit" />
+
+        </form>
+
+    </body>
+
+</html>
+<html
+
+

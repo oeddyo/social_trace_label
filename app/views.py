@@ -5,6 +5,7 @@ import json
 import flask
 import os
 import pymongo
+import time
 
 @app.route('/consent')
 def consent():
@@ -14,14 +15,23 @@ def consent():
 def welcome():
     return render_template("welcome.html", next="/login") 
 
-@app.route('/logout')
-def logout():
-    return """Dear participants,
-    Thank you for participating in our study. Please note that some of the information in the tweets you read in this study may not be true. If you are uncomfortable with your responses to the tweets, you can withdraw your participation now and you will not be penalized in any way. 
+@app.route('/final_store', methods = ['POST', 'GET'])
+def final_store():
+    conn = pymongo.MongoClient(host='grande.rutgers.edu')
+    cursor = conn['social_trace']['subject']
+    for key in flask.request.form.keys():
+        cursor.insert({"subject": str(flask.session['sessionid']), key: flask.request.form.get(key), 'time':time.time()} )
+    return """
+    Dear participants,<br>
+    Thank you for participating in our study. Please note that some of the information in the tweets you read in this study may not be true. If you are uncomfortable with your responses to the tweets, you can withdraw your participation now and you will not be penalized in any way.<br> 
     Please feel free to email Jin Liu at jl2523@cornell.edu, Ke Xie at kx29@cornell.edu, or Jean Marcel Dos Reis Costa at jmd487@cornell.edu, if you have any questions.
 
     Thanks!
     Research Team"""
+
+@app.route('/logout', methods = ['POST', 'GET'])
+def logout():
+    return render_template("logout.html", next="final_store")
 
 @app.route('/annotate', methods = ['POST', 'GET'])
 def annotate():
@@ -37,7 +47,7 @@ def annotate():
         
         conn = pymongo.MongoClient(host='grande.rutgers.edu')
         cursor = conn['social_trace']['annotation']
-        cursor.insert({'annotation':user_dic})
+        cursor.insert({'annotation':user_dic, 'time':time.time()})
         
         #db_path = os.path.join( os.path.dirname(os.path.realpath(__file__)), 'db/data.json' )
         #print 'db ', db_path
@@ -47,7 +57,6 @@ def annotate():
         print user_dic
     return render_template('annotate.html',next='/annotate', user_dic = user_dic)
 
-
 @app.route('/login', methods = ['POST', 'GET'])
 def login():
     if not flask.request.args.get('sessionid'):
@@ -56,15 +65,9 @@ def login():
         if flask.session['sessionid'] not in flask.users:
             flask.users[flask.session['sessionid']] = Annotator()
 
-        if request.method == 'POST':
-            annotator_age = flask.request.form.get('age')
-            print flask.request.form.keys()
-            
-            conn = pymongo.MongoClient(host='grande.rutgers.edu')
-            cursor = conn['social_trace']['subject']
-            
-            for key in flask.request.form.keys():
-                cursor.insert({"subject": str(flask.session['sessionid']), key: flask.request.form.get(key)} )
+        #if request.method == 'POST':
+        #    annotator_age = flask.request.form.get('age')
+        #    print flask.request.form.keys()
             
         return flask.redirect(flask.url_for('annotate'))
 

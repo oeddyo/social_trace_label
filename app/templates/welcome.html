@@ -2,37 +2,6 @@
     <head>  
         <link href="/static/style.css" rel="stylesheet" type="text/css" /> 
         <title="Welcome">
-            <script>
-                function validateForm()
-                {
-                    var twitter_username=document.forms["start"]["twitter_username"].value;
-                    var gender = document.forms['start']['gender'].value
-                    var education = document.forms['start']['education'].value
-                    var use_since = document.forms['start']['use_since'].value
-                    
-                    //console.log("gender = "+gender)
-
-                    if (twitter_username==null || twitter_username=="")
-                    {
-                        alert("Twitter handle must be filled out");
-                        return false;
-                    }
-                    if (gender == null )
-                    {
-                        alert("Gender must be filled out");
-                        return false;
-                    }
-
-                    if (education == null || education =="")
-                    {
-                        alert("year in college must be filled out");
-                        return false;
-                    }
-
-                }
-
-            </script>
-
         </head>
         <body>
             <div id="wrapper">
@@ -51,75 +20,19 @@
                 </p>
 
                 <p>
-                1) We will show 12 tweets for you in a row after filling the following form. Please answer all the questions in the forms. 
+                1) We will show 12 tweets for you in a row.
                 </p>
                 <p>
                 2) For each tweet, we ask how likely are you going to retweet it. What you need to do is to scan the tweet, and click the corresponding answer, and click Continue 
+                </p>
+                <p>
+                3) After seeing all the tweets, please fill out all the survey questions. 
                 </>
                 <p>
-                3) PLEASE FINISH THE WHOLE TEST BEFORE CLOSE YOUR BROWSWER
+                4) PLEASE FINISH THE WHOLE TEST BEFORE CLOSE YOUR BROWSWER
                 </p>
-                Please fill the following forms:
                 <form name="start"  method="post" action="{{next}}" >
-                    <p>
-                    <input type="text"   name="netid" id="netid" >  If you're Cornell student, please fill this for credit. Otherwise optional
-                    </p>
-                    <p>
-                    <input type="text"   name="twitter_username" id="twitter_username">  Your Twitter handle (the name when people @mention you)?
-                    </p>
-                    <p>
-                    <input type="text"   name="language" id="language" > What's your mother tongue?
-                    </p>
-                    <p>
-                    What's your gender?
-                    <br>
-                    <input type="radio" name="gender" value="Male" /> Male
-                    <input type="radio" name="gender" value="Female" /> Female
-                    </p>
-                    <p>
-                    Which year you're in college?
-                    <br>
-                    <input type="radio" name="education" value="Freshman" /> Freshman
-                    <input type="radio" name="education" value="Sophomore" /> Sophomore
-                    <input type="radio" name="education" value="Junior" /> Junior
-                    <input type="radio" name="education" value="Senior" /> Senior
-                    <input type="radio" name="education" value="Graduate student" /> Graduate student
-                    <input type="radio" name="education" value="Other" /> Other
-                    </p>
-
-                    <p>
-                    How long have you registered Twitter?
-                    <br>
-                    <input type="radio" name="use_since" value="I don’t use Twitter" /> I don’t use Twitter
-                    <input type="radio" name="use_since" value="Less than 6 months" /> Less than 6 months
-                    <input type="radio" name="use_since" value="7-11 months" /> 7-11 months
-                    <input type="radio" name="use_since" value="1-2 years" /> 1-2 years
-                    <input type="radio" name="use_since" value="3-5 years" /> 3-5 years
-                    </p>
-
-                    <p>
-                    How many times do you retweet in a week?
-                    <br>
-                    <input type="radio" name="n_retweet" value="I don’t use Twitter" /> I don’t use Twitter
-                    <input type="radio" name="n_retweet" value="0 to 5" /> 0 to 5 times
-                    <input type="radio" name="n_retweet" value="6 to 10" /> 6 to 10 times
-                    <input type="radio" name="n_retweet" value="11 to 20" /> 11 to 20 times
-                    <input type="radio" name="n_retweet" value="More than 20" /> More than 20 times
-                    </p>
-
-                    <p>
-                    How often do you check other people’s tweets?
-                    <br>
-                    <input type="radio" name="check_freq" value="I don’t use Twitter" /> I don’t use Twitter
-                    <input type="radio" name="check_freq" value="Less than once a month" /> Less than once a month
-                    <input type="radio" name="check_freq" value="At least once a month" /> At least once a month
-                    <input type="radio" name="check_freq" value="At least once a week" /> At least once a week
-                    <input type="radio" name="check_freq" value="At least once a day" /> At least once a day
-                    <input type="radio" name="check_freq" value="Several times a day" /> Several times a day
-                    </p>
-
                     <input type="submit" value="Start" />
-
                 </form>
 
             </div>

@@ -1058,13 +1058,11 @@
                                                                 <br/>
 
 
-                                                                <a class="tweet-geo-text" href="//maps.google.com/maps?z=13&amp;ll=44.23886%2C-73.99725&amp;q=North%20Elba%2C%20NY" target="_blank">{{user_dic.mutual}} of your friends on Twitter retweeted this</a>
-
+                                                                <a class="tweet-geo-text" href="//maps.google.com/maps?z=13&amp;ll=44.23886%2C-73.99725&amp;q=North%20Elba%2C%20NY" target="_blank">{{user_dic.mutual}} of people you follow on Twitter retweeted this</a>
 
                                                             </span>
                                                         </div>
                                                     </div>
-
 
                                                     <!-- to show the avartars of the retweeters -->
                                                     {% for item in user_dic.retweeters %}
@@ -1076,11 +1074,10 @@
                                                     {% endfor %}
                                                     <br>
                                                     </br>
+
+
                                                     <br>
                                                     </br>
-
-
-
 
 
                                                         <form name="next" method="post" action="{{next}}">
@@ -1094,6 +1091,8 @@
                                                             </ul>
                                                             <input type="submit" value="Continue" style="margin-top: 15px;cursor:pointer;" />
                                                         </form>
+
+
 
 
 
