@@ -16,7 +16,12 @@ def welcome():
 
 @app.route('/logout')
 def logout():
-    return "Thanks. Bye..."
+    return """Dear participants,
+    Thank you for participating in our study. Please note that some of the information in the tweets you read in this study may not be true. If you are uncomfortable with your responses to the tweets, you can withdraw your participation now and you will not be penalized in any way. 
+    Please feel free to email Jin Liu at jl2523@cornell.edu, Ke Xie at kx29@cornell.edu, or Jean Marcel Dos Reis Costa at jmd487@cornell.edu, if you have any questions.
+
+    Thanks!
+    Research Team"""
 
 @app.route('/annotate', methods = ['POST', 'GET'])
 def annotate():
