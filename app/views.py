@@ -6,6 +6,9 @@ import flask
 import os
 import pymongo
 
+@app.route('/consent')
+def consent():
+    return render_template("consent.html", next="/welcome")
 
 @app.route('/welcome')
 def welcome():
